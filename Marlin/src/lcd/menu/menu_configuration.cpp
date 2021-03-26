@@ -302,7 +302,7 @@ void menu_advanced_settings();
 
 #endif
 
-#if PREHEAT_COUNT && DISABLED(SLIM_LCD_MENUS)
+#if PREHEAT_COUNT 
 
   void _menu_configuration_preheat_settings() {
     #define _MINTEMP_ITEM(N) HEATER_##N##_MINTEMP,
@@ -407,7 +407,7 @@ void menu_configuration() {
   #endif
 
   // Preheat configurations
-  #if PREHEAT_COUNT && DISABLED(SLIM_LCD_MENUS)
+  #if PREHEAT_COUNT
     LOOP_L_N(m, PREHEAT_COUNT)
       SUBMENU_N_S(m, ui.get_preheat_label(m), MSG_PREHEAT_M_SETTINGS, _menu_configuration_preheat_settings);
   #endif
